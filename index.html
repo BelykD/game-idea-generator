@@ -1,0 +1,98 @@
+<!--
+
+The Million Dollar Game Idea - Web App
+File name: index.html
+Author: Dylan Belyk
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="styles.css">
+
+        <title>Game Dev's Idea Generator</title>
+    </head>
+
+    <body>
+        <h1>The Million Dollar Game Idea</h1>
+       
+        <div class="rows">
+            <div class="input-fields">
+                <input type="text" id="genre-field" placeholder="Genre" readonly>
+            </div>
+            <div class="tooltip" id="genre-tooltip"> <i id="genre-dice" class="fa-solid fa-dice"></i>
+                <span class="tooltiptext">Click to reroll - Genre for your game - E.g. First-Person Shooter.</span>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="input-fields">
+                <input type="text" id="mechanic-field" placeholder="Mechanic" readonly>
+            </div>
+            <div class="tooltip"> <i id="mechanic-dice" class="fa-solid fa-dice"></i>
+                <span class="tooltiptext">Click to reroll - A unique mechanic for your game - E.g. Time Travel.</span>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="input-fields">
+                <input type="text" id="theme-field" placeholder="Theme" readonly>
+            </div>
+            <div class="tooltip"> <i id="theme-dice" class="fa-solid fa-dice"></i>
+                <span class="tooltiptext">Click to reroll - Theme for your game - E.g. Science Fiction.</span>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="input-fields">
+                <div id="color-swatch-row">
+                    <div class="color-swatch" id="color-swatch-1">
+                        <label id="color-label-1">#e8e8e8</label>
+                    </div>
+                    <div class="color-swatch" id="color-swatch-2">
+                        <label id="color-label-2">#b7b7b7</label>
+                    </div>
+                    <div class="color-swatch" id="color-swatch-3">
+                        <label id="color-label-3">#8c8c8c</label>
+                    </div>
+                    <div class="color-swatch" id="color-swatch-4">
+                        <label id="color-label-4">#525252</label>
+                    </div>
+                    <div class="color-swatch" id="color-swatch-5">
+                        <label id="color-label-5">#000000</label>
+                    </div>
+                </div>
+            </div>
+            <div class="tooltip"> <i id="pallet-dice" class="fa-solid fa-dice"></i>
+                <span class="tooltiptext">Click to reroll or click the swatch to copy the hex code - Color pallet for your game.</span>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button type="button" id="generate-button" >Generate Idea</button>
+            <form id="chat-form">
+                <button type="submit" id="like-button">This is the One!</button>
+            </form>
+        </div>
+
+        <div id="progress-bar-container">
+            <div class="load" id="loading"></div>
+        </div>
+        <div id="response-container">
+            <textarea id="response" rows="40" style="width: 80%;" readonly></textarea>
+        </div>
+    </body>
+
+    <footer>
+        <div id="popup">
+            <span id="close-button" onclick="this.parentElement.style.visibility='hidden';">&times;</span>
+            Hex copied to clipboard: 
+        </div> 
+    </footer>
+
+    <script src="generate.js"></script> 
+    <script src="chatgpt.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/b45e3ac599.js" crossorigin="anonymous"></script>
+
+</html>

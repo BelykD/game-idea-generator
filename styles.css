@@ -1,0 +1,322 @@
+/*
+
+The Million Dollar Game Idea - Web App
+File name: styles.css
+Author: Dylan Belyk
+
+*/
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url(fonts/Roboto-Light.ttf);
+}
+
+html {
+    background-color: #ff7400;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    text-align: center;
+}
+
+button {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rows {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    align-items: center;
+    padding-left: 50px;
+}
+/* Input placeholder color */
+::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+input {
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 350px;
+    height: 50px;
+    background-color: #ff9a00;
+    outline: none;
+    border: none;
+}
+
+input:hover {
+    background-color: #ff4d00;
+    cursor: pointer; /* Change pointer on mouse hover */
+}
+
+.label-fields {
+    text-transform: uppercase;
+    width: 100px;
+}
+
+#response-container {
+    text-align: center;
+    width: 70%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+}
+
+#response {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    background-color: white;
+    color: black;
+    font-family: 'Roboto-Thin', sans-serif;
+    padding: 24px;
+    margin-top: 0px;
+    border-radius: 5px;
+    border: none; /* Remove border */
+    resize: none; /* Disable resizing */
+    outline: none; /* Remove border on focus */
+}
+
+.color-swatch {
+    width: 70px;
+    height: 50px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    text-shadow: 1px 1px #000000;
+}
+
+/* Default color swatches */
+#color-swatch-1 { 
+    border-radius: 5px 0 0 5px; 
+    background-color: #e8e8e8; 
+    border-top: solid white; 
+    border-bottom: solid white; 
+    border-left: solid white; 
+}
+#color-swatch-2 { 
+    background-color: #b7b7b7; 
+    border-top: solid white; 
+    border-bottom: solid white; 
+}
+#color-swatch-3 { 
+    background-color: #8c8c8c; 
+    border-top: solid white; 
+    border-bottom: solid white; 
+}
+#color-swatch-4 { 
+    background-color: #525252; 
+    border-top: solid white; 
+    border-bottom: solid white; 
+}
+#color-swatch-5 { 
+    border-radius: 0 5px 5px 0; 
+    background-color: #000000; 
+    border-top: solid white; 
+    border-bottom: solid white; 
+    border-right: solid white 
+} 
+
+#color-swatch-row { display: flex; }
+
+/* Hide hex color code until hover */
+#color-label-1 { display: none; }
+#color-label-2 { display: none; }
+#color-label-3 { display: none; }
+#color-label-4 { display: none; }
+#color-label-5 { display: none; }
+
+/* Display hex color code on hover */  /* Inverted contrast to counteract the parent swatch */
+#color-swatch-1:hover #color-label-1 { display: block; }
+#color-swatch-2:hover #color-label-2 { display: block; }
+#color-swatch-3:hover #color-label-3 { display: block; }
+#color-swatch-4:hover #color-label-4 { display: block; }
+#color-swatch-5:hover #color-label-5 { display: block; }
+
+.button-container {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#like-button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #a5c90f;
+    font-size: large;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    width: 350px;
+    height: 50px;
+}
+
+/* Change color of button on mouse hover */
+#like-button:hover {
+    background-color: #c1eb11;
+    cursor: pointer; /* Change pointer on mouse hover */
+}
+/* Animation for button on click */
+#like-button:active {
+    background-color: #c1eb11;
+    box-shadow: 0 0 0 4px #a5c90f;
+    transform: translateY(2px);
+}
+
+#generate-button {
+    background-color: #2f6569;
+    font-size: large;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    width: 350px;
+    height: 50px;
+}
+
+/* Change color of button on mouse hover */
+#generate-button:hover { 
+    background-color: #43938a;
+    cursor: pointer; /* Change pointer on mouse hover */
+}
+
+/* Animation for button on click */
+#generate-button:active {
+  background-color: #ff0000;
+  box-shadow: 0 0 0 4px #ff4d00;
+  transform: translateY(2px);
+}
+
+#genre-field, #mechanic-field, #theme-field, #pallet-field {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: medium;
+}
+
+.tooltip {
+    width: 50px;
+    position: relative;
+    display: inline-block;
+    font-size: small;
+    font-weight: bolder;
+    cursor: pointer; /* Change pointer on mouse hover */
+    text-align: center;
+}
+
+i {
+    font-size: large;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: #ff4d00;
+    text-align: center;
+    padding: 8px 8px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -118px; /* Center tool tip with hover element */
+    margin-bottom: 7px; /* Height above hover element */
+    opacity: 0;
+    transition: opacity 0.2s; /* Fade in */
+}
+  
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ff4d00 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+footer {
+    width: 95%; /* To disable horizontal scroll */
+    text-transform: uppercase;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+}
+
+ /* Popup alert */
+#popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+    padding: 20px;
+    background-color: #a5c90f;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto; 
+    font-size: smaller;
+}
+    
+  /* Close popup button */
+#close-button {
+    margin-left: 15px;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+}
+  
+#close-button:hover {
+    color: lightgrey;
+} 
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+.load {
+    visibility: hidden;
+    opacity: 0;
+	width: 50px;
+	height: 50px;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border: 12px solid white;
+	border-radius: 50%;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+    transition: all 0.5s ease-in;
+    animation: rotate 1s linear infinite;
+}
