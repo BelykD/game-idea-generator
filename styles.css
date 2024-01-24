@@ -200,7 +200,7 @@ input:hover {
   transform: translateY(2px);
 }
 
-#genre-field, #mechanic-field, #theme-field, #pallet-field {
+#genre-field, #mechanic-field, #theme-field, #palette-field {
     font-family: 'Roboto', sans-serif;
     color: white;
     text-align: center;
