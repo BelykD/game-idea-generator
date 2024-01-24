@@ -1,9 +1,7 @@
 /*
-
 The Million Dollar Game Idea - Web App
 File name: generate.js
 Author: Dylan Belyk
-
 */
 
 // Text input fields
@@ -15,16 +13,16 @@ const themeField = document.getElementById('theme-field');
 const genreDice = document.getElementById('genre-dice');
 const mechanicDice = document.getElementById('mechanic-dice');
 const themeDice = document.getElementById('theme-dice');
-const palletDice = document.getElementById('pallet-dice');
+const paletteDice = document.getElementById('palette-dice');
 
-// Color pallet swatch divs
+// Color palette swatch divs
 const swatch1 = document.getElementById('color-swatch-1');
 const swatch2 = document.getElementById('color-swatch-2');
 const swatch3 = document.getElementById('color-swatch-3');
 const swatch4 = document.getElementById('color-swatch-4');
 const swatch5 = document.getElementById('color-swatch-5');
 
-// Color pallet labels
+// Color palette labels
 const label1 = document.getElementById('color-label-1');
 const label2 = document.getElementById('color-label-2');
 const label3 = document.getElementById('color-label-3');
@@ -46,12 +44,12 @@ themeField.addEventListener('click', () => { rollTheme(); })
 genreDice.addEventListener('click', () => { rollGenre(); })
 mechanicDice.addEventListener('click', () => { rollMechanic(); })
 themeDice.addEventListener('click', () => { rollTheme(); })
-palletDice.addEventListener('click', () => { rollColorPallet(); })
+paletteDice.addEventListener('click', () => { rollColorPallet(); })
 
 // Generate button to generate new fields
 document.getElementById("generate-button").addEventListener("click", generateIdeas);
 
-var genreNum, mechanicNum, themeNum, palletNum = "";
+var genreNum, mechanicNum, themeNum, paletteNum = "";
 
 const popupWindow = document.getElementById('popup');
 
@@ -83,7 +81,7 @@ const themeValues = ["Superhero", "Post-Apocalypse", "Pirate", "Modern-Day", "Fu
     "Viking", "Neo-Noir", "Noir", "The Amazon", ""];
 
 // Color pallet arrays
-const palletValues = [
+const paletteValues = [
     ["#014c90", "#d3291c", "#ffff00", "#ff7f00", "#63b8ff"],
     ["#ff2626", "#fff98b", "#5eb07c", "#2d9667", "#33725f"],
     ["#302c0f", "#939465", "#b1b19d", "#ab7956", "#582206"],
@@ -134,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     genreField.value = '';
     mechanicField.value = '';
     themeField.value = '';
-    palletField.value = '';
+    paletteField.value = '';
   });
 
 // Function to generate new outputs for each field
@@ -143,7 +141,7 @@ function generateIdeas() {
     rollGenre(); // Generate a random genre
     rollMechanic(); // Generate a random mechanic
     rollTheme(); // Generate a random theme
-    rollColorPallet(); // Generate a random color pallet
+    rollColorPalette(); // Generate a random color palette
 } 
 
 // Roll functions to generate seperate field values
@@ -162,20 +160,20 @@ function rollTheme() {
     themeField.value = themeValues[themeNum];
 }
 
-function rollColorPallet() {
-    palletNum = Math.floor(Math.random() * palletValues.length);
-    // Color pallet fields - div background color
-    swatch1.style.backgroundColor = palletValues[palletNum][0]; // Swatch 1
-    swatch2.style.backgroundColor = palletValues[palletNum][1]; // Swatch 2
-    swatch3.style.backgroundColor = palletValues[palletNum][2]; // Swatch 3
-    swatch4.style.backgroundColor = palletValues[palletNum][3]; // Swatch 4
-    swatch5.style.backgroundColor = palletValues[palletNum][4]; // Swatch 5
-    // Color pallet fields - hex code label text
-    label1.textContent = palletValues[palletNum][0]; // Label 1
-    label2.textContent = palletValues[palletNum][1]; // Label 2
-    label3.textContent = palletValues[palletNum][2]; // Label 3
-    label4.textContent = palletValues[palletNum][3]; // Label 4
-    label5.textContent = palletValues[palletNum][4]; // Label 5
+function rollColorPalette() {
+    paletteNum = Math.floor(Math.random() * paletteValues.length);
+    // Color palette fields - div background color
+    swatch1.style.backgroundColor = paletteValues[paletteNum][0]; // Swatch 1
+    swatch2.style.backgroundColor = paletteValues[paletteNum][1]; // Swatch 2
+    swatch3.style.backgroundColor = paletteValues[paletteNum][2]; // Swatch 3
+    swatch4.style.backgroundColor = paletteValues[paletteNum][3]; // Swatch 4
+    swatch5.style.backgroundColor = paletteValues[paletteNum][4]; // Swatch 5
+    // Color palette fields - hex code label text
+    label1.textContent = paletteValues[paletteNum][0]; // Label 1
+    label2.textContent = paletteValues[paletteNum][1]; // Label 2
+    label3.textContent = paletteValues[paletteNum][2]; // Label 3
+    label4.textContent = paletteValues[paletteNum][3]; // Label 4
+    label5.textContent = paletteValues[paletteNum][4]; // Label 5
 }
 
 // Function to copy swatch hex to clipboard and display popup
